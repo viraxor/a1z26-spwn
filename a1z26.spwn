@@ -1,0 +1,22 @@
+extract obj_props;
+
+encode_string = "Hello World!"
+
+letters = "abcdefghijklmnopqrstuvwxyz"
+
+let string_display = "";
+
+for char in encode_string.lowercase() {
+    for letter in letters {
+        if char == letter {
+            string_display += "{};".fmt(letters.index(char) + 1);
+        };
+    }; 
+};
+
+$.add(obj {
+    OBJ_ID: 914,
+    X: 300,
+    Y: 90,
+    TEXT: $.b64encode(string_display),
+});
